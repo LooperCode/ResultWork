@@ -1,4 +1,4 @@
-﻿string[] FillArray (string []insert, int n)
+﻿string[] FillArray (string []insert)
 {
     
     for (int i = 0; i < insert.Length; i++)
@@ -9,9 +9,9 @@
     return insert;
 }
 
-int CheckLength (string []insert, int count)
+int CheckLength (string []insert)
 {
-    
+    int count = 0;
     for (int i = 0; i < insert.Length; i++)
     {
         
@@ -23,9 +23,10 @@ int CheckLength (string []insert, int count)
     return count;
 }
 
-void ResultArray (string[] insert, string [] resultArr)
+void ResultArray (string[] insert)
 {
     int indexResult = 0;
+    string [] resultArr = new string [CheckLength(insert)];
     for (int i = 0; i < insert.Length; i++)
     {
         if (insert[i].Length <= 3)
@@ -40,10 +41,8 @@ void ResultArray (string[] insert, string [] resultArr)
 Console.Write("Введите размер массива: ");
 int n = Convert.ToInt32(Console.ReadLine());
 string[] insert = new string[n];
-FillArray(insert, n);
-int count = 0;
-string [] resultArr = new string [CheckLength(insert, count)];
-ResultArray(insert, resultArr);
+FillArray(insert);
+ResultArray(insert);
 
 
 
